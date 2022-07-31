@@ -1,0 +1,280 @@
+*, html {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+@font-face{
+	font-family: "Formula1";
+	src: url("../font/Formula1 Display Regular.ttf");
+}
+
+*{
+	font-family: "Formula1", "sans-serif";
+}
+
+.navbar{
+	background-color: #e10600;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+
+	.links{
+		display: none;
+		width: -webkit-fill-available;
+    	padding-left: 1rem;
+		a{
+			color: white;
+		text-decoration: none;
+		font-size: 0.75rem;
+		font-weight: 300;
+		    padding: 26px 8px 13px 13px;
+		    display: inline-block;
+		    border: 1px solid #e10600;
+		    border-left: none;
+		    	border-top: none;
+
+		    &:hover{
+		    	border: 1px solid white;
+		    	border-bottom-right-radius: 10px;
+		    	border-left: none;
+		    	border-top: none;
+		    }
+		}
+	}
+
+	.nav-inside{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+
+		.logo{
+			width: 120px;
+		}
+
+		.bars{
+			width: 20px;
+		}
+
+
+	}
+}
+
+@media (min-width: 1024px){
+	.navbar{
+		img.bars{
+		display: none;
+		}
+
+		div.links{
+			display: block;
+		}
+	}
+}
+
+
+.drivers{
+	padding: 10px;
+	max-width: 768px;
+	margin: 0 auto;
+	margin-top: 2rem;
+
+	.title p{
+		font-family: sans-serif;
+	}
+
+	h1{
+		font-size: 32px;
+		font-weight: 900;
+		border: 10px solid black;
+		border-bottom: none;
+		border-left: none;
+		border-top-right-radius: 12px;
+	}
+	p{
+		padding: 1rem;
+	}
+
+	.driver{
+		border-top: 2px solid black;
+		border-right: 2px solid black;
+		border-top-right-radius: 10px;
+		padding: 1rem 1rem 0 0;
+		margin-top: 2rem;
+		transition: .1s ease-out;
+
+		&:hover{
+			padding-top: 2rem;
+			margin-top: 1rem;
+			border-color: blue;
+		}
+		p{
+			padding: 0;
+		}
+
+		.points{
+			text-align: right;
+			.pts{
+				color: white;
+			background-color: black;
+			border-radius: 3px;
+			padding: .1rem .3rem;
+			}
+		}
+
+		.position{
+			font-size: 2rem;
+		}
+
+		header{
+			display: flex;
+			justify-content: space-between;
+			height: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.personal-info{
+			padding: .5rem 0 .5rem .5rem;
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			.name-section{
+				text-transform: uppercase;
+			}
+
+			&:before{
+				content: "";
+				height: 60%;
+				width: 5px;
+				background-color: blue;
+				position: absolute;
+				left: 0;
+			}
+
+			.flag img{
+				height: 32px;
+				width: 48px;
+				border-radius: 5px;
+				border: 1px solid rgb(148,148,152);
+			}
+
+
+		}
+		.extra-info{
+			padding-top: .5rem;
+			.photo-section{
+				background-image: url(../img/plus-x1-pattern.png);
+				height: 167px;
+				margin-top: 1.5rem;
+
+				.driver-photo{
+					height: 192px;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+
+				.driver-number{
+					height: 55px;
+					width: 97px;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					background-color: white;				}
+			}
+		}
+	}
+
+}
+
+@media (min-width: 770px){
+	.title h1{
+			font-size: 62px; 
+		}
+
+	.title p{
+		max-width: 60%;
+	}
+	.drivers-section{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
+	}
+}
+
+@media (min-width: 1024px){
+	.drivers{
+		max-width: 968px;
+
+	}
+	.drivers-section{
+
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+footer{
+	background-color: #15151e;
+		.formula-section{
+			background-color: #15151e;
+			padding: 2rem 1rem;
+			margin: 0 auto;
+
+			section{
+				padding: 3rem 1rem;
+				color: white;
+				border-top: 2px solid white;
+				border-right: 2px solid white;
+				border-top-right-radius: 10px;
+				margin-bottom: 2rem;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				img{
+					width: 100%;
+					height: auto;
+				}
+				h2{
+					margin-bottom: .75rem;
+				}
+				p{
+					margin-bottom: .75rem;
+					font-family: sans-serif;
+				}
+				a{
+					background-color: #e10600;
+					text-decoration: none;
+					font-weight: 800;
+					padding: .5rem 1rem;
+					display: inline-block;
+					color: white;
+					font-size: .8rem;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+
+@media (min-width: 768px){
+	.formula-section{
+		max-width: 768px;
+	}
+}
+
+@media(min-width: 1024px){
+	.formula-section{
+		max-width: 1024px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
+	}
+}
